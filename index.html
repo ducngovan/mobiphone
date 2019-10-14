@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobiphone</title>
+</head>
+<style>
+    .mobi{
+        border: 3px solid ;
+        width: 500px;
+        height: 500px;
+        margin: auto;
+    }
+</style>
+<body>
+<div class="content">
+    <div class="mobi" >
+        <div>
+<!--            chưc nang bat tat-->
+            <H1>NOKIA</H1>
+            pin: <input type="text" disabled style="width: 40px" id="pinno">
+        </div>
+        <div style="display: block " id="mobione">
+<!--            chức năng nt và nhan-->
+            <input type="text" id="nokia" placeholder="nhap tin nhan"/>
+            <button type="reset" onclick="submit()">SEND</button>
+            <br/><br/><br/>
+            <textarea id="bang1" rows="20" cols="60" placeholder="luu tru tin nhan" style="border: 2px solid; "  disabled></textarea>
+    </div>
+    </div>
+    <div>
+        ------------------------------------------------------------------------------------------------------------------------------------------INTERNET------------------------------------------------------------<br/>
+        -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    </div>
+    <div class="mobi">
+        <div>
+<!--            chuc nag bat tat-->
+            <h1>SAM SUNG</h1>
+            pin: <input type="text" disabled style="width: 40px" id="pinsam">
+        </div>
+        <div style="display: block " id="mobitwo">
+<!--            chuc nang nt va nhan -->
+             <input type="text" id="samsung" placeholder="nhap tin nhan"/>
+            <button type="button" onclick="submit1()">Send</button>
+            <br/><br/><br/>
+            <textarea id="bang2" rows="20" cols="60" placeholder="luu tru tin nhan" style="border: 2px solid;" disabled></textarea>
+
+        </div>
+    </div>
+</div>
+<script>
+    let pinno = 100;
+    document.getElementById('pinno').value=pinno;
+    let pinsam = 100;
+    document.getElementById('pinsam').value=pinno;
+function submit() {
+    if (document.getElementById('nokia').value == "") {
+        alert("ban hay nhap lai.");
+    } else {
+        pinno -= 1;
+        if(pinno< 5){
+            alert('tat nguon');
+            document.getElementById('mobione').style.display =  'none';
+        }else{
+            document.getElementById('pinno').value=pinno;
+        }
+        document.getElementById('bang2').value += "NOKIA: " + document.getElementById('nokia').value + "\n";
+        document.getElementById('bang1').value += "NOKIA: " + document.getElementById('nokia').value + "\n"
+        document.getElementById('nokia').value = "";
+    }
+}
+function submit1() {
+    if(document.getElementById('samsung').value == ""){
+        alert("ban hay nhap lai.");
+    }else{
+        pinsam -= 1;
+        if(pinsam < 5){
+            alert('tat nguon');
+            document.getElementById('mobitwo').style.display = 'none';
+        }else{
+            document.getElementById('pinsam').value=pinsam;
+        }
+        document.getElementById('bang1').value +="SAMSUNG: "+ document.getElementById('samsung').value+"\n";
+        document.getElementById('bang2').value +="SAMSUNG: "+ document.getElementById('samsung').value+"\n"
+        document.getElementById('samsung').value = ""
+
+    }
+
+}
+</script>
+</body>
+</html>
